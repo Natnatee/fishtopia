@@ -3,6 +3,8 @@ import { NextResponse } from "next/server";
 import { connectDB } from "@/app/lib/dbConnect";
 import { Fish } from "@/app/models/Fish";
 
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
   await connectDB();
 
