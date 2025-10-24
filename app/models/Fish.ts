@@ -6,6 +6,7 @@ const FishSchema = new Schema(
     name: { type: String, required: true },
     species: { type: String, required: true },
     size: { type: Number, default: 0 },
+    price: { type: Number, default: 10 },
   },
   { timestamps: true }
 );

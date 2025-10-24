@@ -8,9 +8,10 @@ export async function GET() {
 
   // สร้างข้อมูลทดสอบ
   const fish = await Fish.create({
-    name: "Goldfish",
-    species: "Carassius auratus",
+    name: "ปลาปู",
+    species: "Pangasianodonodon",
     size: 5,
+    price: 20,
   });
 
   return NextResponse.json({
