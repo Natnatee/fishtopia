@@ -7,7 +7,16 @@ export async function GET() {
     await connectDB();
     
     // ดึงข้อมูลปลาทั้งหมดจากฐานข้อมูล
-    const fishes = await Fish.find({}).sort({ createdAt: -1 });
+    const fishes = (await Fish.find({}).sort({ createdAt: -1 })).map(fish => ({
+      id: fish._id.toString(),
+      name: fish.name,
+      species: fish.species,
+      price: fish.price,
+      description: fish.description,
+      image: fish.image,
+      createdAt: fish.createdAt,
+      updatedAt: fish.updatedAt,
+    }));
     
     return NextResponse.json({
       success: true,
